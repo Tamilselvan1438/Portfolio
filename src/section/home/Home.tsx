@@ -22,7 +22,6 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import myPhoto from "../../image/myPhoto.jpg";
 
 const Home = () => {
   const theme = useTheme();
@@ -211,7 +210,7 @@ const Home = () => {
               >
                 <Avatar
                   alt="Tamil Selvan - Frontend Developer"
-                  src={myPhoto}
+                  src="../image/myphoto.jpg"
                   sx={{
                     width: "100%",
                     height: "100%",
