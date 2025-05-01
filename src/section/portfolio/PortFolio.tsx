@@ -16,7 +16,7 @@ import {
   ThemeProvider,
   Toolbar,
   Typography,
-  createTheme
+  createTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -141,7 +141,13 @@ const Portfolio = () => {
             <IconButton
               color="inherit"
               onClick={() => setDrawerOpen(true)}
-              sx={{ display: { md: "none" } }}
+              sx={{
+                display: { md: "none" },
+                color: "rgba(0, 0, 0, 0.87)",  // Dark gray
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>

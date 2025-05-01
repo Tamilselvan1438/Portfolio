@@ -1,11 +1,17 @@
 import {
   Code,
+  Css,
+  DataObject,
   DesignServices,
+  Devices,
   Email,
   GitHub,
+  Javascript,
   LinkedIn,
-  PhoneAndroid,
-  Storage
+  Storage,
+  Terminal,
+  Twitter,
+  Widgets,
 } from "@mui/icons-material";
 import {
   Avatar,
@@ -44,19 +50,25 @@ const Home = () => {
       url: "https://www.linkedin.com/in/tamil-selvan-p-b08849354/",
     },
     { icon: <GitHub />, url: "https://github.com/Tamilselvan1438" },
-    // { icon: <Twitter />, url: "#" },
+    { icon: <Twitter />, url: "https://x.com/TamilSelvan1438" },
     // { icon: <Email />, url: "mailto:your.email@example.com" },
   ];
 
   const skills = [
-    { name: "React.js", icon: <Code />, level: 90 },
-    { name: "JavaScript", icon: <Code />, level: 85 },
-    { name: "HTML/CSS", icon: <DesignServices />, level: 95 },
-    { name: "Material UI", icon: <DesignServices />, level: 80 },
-    { name: "Responsive Design", icon: <PhoneAndroid />, level: 85 },
-    { name: "REST APIs", icon: <Storage />, level: 75 },
+    { name: "HTML/CSS", icon: <DesignServices />, level: 100 },
+    { name: "TailwindCSS", icon: <Css />, level: 100 },
+    { name: "Material UI", icon: <Widgets />, level: 100 },
+    { name: "React.js", icon: <Code />, level: 99 },
+    { name: "Next.js", icon: <Terminal />, level: 99 },
+    { name: "Redux", icon: <Storage />, level: 99 },
+    { name: "Ruby", icon: <DataObject />, level: 99 },
+    { name: "JavaScript", icon: <Javascript />, level: 99 },
+    { name: "TypeScript", icon: <DataObject />, level: 99 },
+    { name: "Vite", icon: <Terminal />, level: 99 },
+    { name: "Responsive Design", icon: <Devices />, level: 85 },
+    { name: "Jenkins", icon: <Storage />, level: 75 },
+    // { name: "REST APIs", icon: <Http />, level: 75 },
   ];
-
   const projects = [
     {
       title: "E-commerce Dashboard",
@@ -80,17 +92,17 @@ const Home = () => {
   const experience = [
     {
       role: "Frontend Developer",
-      company: "Tech Solutions Inc.",
-      period: "2021 - Present",
+      company: "Drylogic Solutions.",
+      period: "2025 - Present",
       description:
-        "Developing responsive web applications using React.js and optimizing performance",
+        "Developing responsive web applications using React.js, Next.js, TailwindCSS and optimizing performance",
     },
-    {
-      role: "UI Developer",
-      company: "Digital Creations",
-      period: "2019 - 2021",
-      description: "Implemented design systems and collaborated with UX team",
-    },
+    // {
+    //   role: "UI Developer",
+    //   company: "Digital Creations",
+    //   period: "2019 - 2021",
+    //   description: "Implemented design systems and collaborated with UX team",
+    // },
   ];
 
   return (
@@ -107,13 +119,13 @@ const Home = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontWeight: 800,
+                  fontWeight: 600,
                   fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
                   lineHeight: 1.2,
                   mb: 2,
                 }}
               >
-                Hi, I'm{" "}
+                Meet{" "}
                 <span style={{ color: theme.palette.primary.main }}>
                   Tamil Selvan
                 </span>
@@ -143,12 +155,12 @@ const Home = () => {
                   mb: 4,
                 }}
               >
-                I specialize in building responsive, accessible, and performant
-                web applications using modern technologies. With 1+ years of
-                experience, I create digital solutions that are both beautiful
-                and functional.
+                I specialize in developing responsive, accessible, and
+                high-performance web applications using modern technologies.
+                With one year of professional experience, I create digital
+                solutions that combine aesthetic appeal with robust
+                functionality.
               </Typography>
-
               <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
                 <Button
                   variant="contained"
@@ -226,32 +238,51 @@ const Home = () => {
 
       {/* Skills Section */}
       <Box sx={{ my: 12 }} id="skills">
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 700,
-            mb: 6,
-            textAlign: "center",
-            position: "relative",
-            "&:after": {
-              content: '""',
-              position: "absolute",
-              bottom: -8,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "4px",
-              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            },
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          My Skills
-        </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 700,
+              mb: 6,
+              textAlign: "center",
+              position: "relative",
+              "&:after": {
+                content: '""',
+                position: "absolute",
+                bottom: -8,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "80px",
+                height: "4px",
+                background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+              },
+            }}
+          >
+            My Skills
+          </Typography>
+        </motion.div>
 
         <Grid container spacing={4}>
           {skills.map((skill, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <motion.div whileHover={{ y: -5 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                whileHover={{
+                  y: -8,
+                  transition: { type: "spring", stiffness: 300 },
+                }}
+              >
                 <Paper
                   elevation={3}
                   sx={{
@@ -262,11 +293,14 @@ const Home = () => {
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    {skill.icon}
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      {skill.icon}
+                    </motion.div>
                     <Typography variant="h6" sx={{ ml: 1, fontWeight: 600 }}>
                       {skill.name}
                     </Typography>
                   </Box>
+
                   <Box
                     sx={{
                       width: "100%",
@@ -276,27 +310,37 @@ const Home = () => {
                       overflow: "hidden",
                     }}
                   >
-                    <Box
-                      sx={{
-                        width: `${skill.level}%`,
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
+                      style={{
                         height: "100%",
                         background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
                       }}
                     />
                   </Box>
-                  <Typography
-                    variant="body2"
-                    sx={{ mt: 1, textAlign: "right" }}
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 + 0.8 }}
                   >
-                    {skill.level}%
-                  </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ mt: 1, textAlign: "right" }}
+                    >
+                      {skill.level}%
+                    </Typography>
+                  </motion.div>
                 </Paper>
               </motion.div>
             </Grid>
           ))}
         </Grid>
       </Box>
-
       {/* Experience Section */}
       <Box sx={{ my: 12 }} id="experience">
         <Typography

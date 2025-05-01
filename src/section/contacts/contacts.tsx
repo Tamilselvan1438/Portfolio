@@ -596,7 +596,7 @@ const Contact = () => {
                   flexWrap: "wrap",
                 }}
               >
-                {["React", "Next.js", "TypeScript", "Tailwind"].map((skill) => (
+                {["React", "Next.js", "TypeScript", "TailwindCSS"].map((skill) => (
                   <Chip
                     key={skill}
                     label={skill}
