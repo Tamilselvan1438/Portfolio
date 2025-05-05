@@ -918,14 +918,14 @@ const About = () => {
               }}
             >
               {[
-                { name: "React", icon: "⚛️", level: 90 },
-                { name: "Material UI", icon: "🎨", level: 85 },
-                { name: "TypeScript", icon: "📝", level: 80 },
-                { name: "Next.js", icon: "⏭️", level: 75 },
-                { name: "Redux", icon: "🔄", level: 80 },
-                { name: "GraphQL", icon: "📊", level: 70 },
+                { name: "Material UI", icon: "🎨", level: 100 },
+                { name: "TailwindCSS", icon: "📊", level: 100 },
+                { name: "React", icon: "⚛️", level: 99 },
+                { name: "TypeScript", icon: "📝", level: 99 },
+                { name: "Next.js", icon: "⏭️", level: 99 },
+                { name: "Redux", icon: "🔄", level: 99 },
+                { name: "Node.js", icon: "🟢", level: 99 },
                 { name: "Framer Motion", icon: "✨", level: 85 },
-                { name: "Node.js", icon: "🟢", level: 70 },
               ].map((skill) => (
                 <Box
                   key={skill.name}
@@ -1002,13 +1002,13 @@ const About = () => {
             <Box
               sx={{
                 display: "flex",
-                gap: 3,
+                gap: 1,
                 overflowX: "auto",
                 pb: 2,
                 scrollSnapType: "x mandatory",
                 "& > *": {
                   scrollSnapAlign: "start",
-                  minWidth: isMobile ? "85vw" : "300px",
+                  minWidth: isMobile ? "85vw" : "280px",
                 },
               }}
             >
@@ -1018,7 +1018,7 @@ const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  whileHover={{ scale: 1.02 }}
+                  // whileHover={{ scale: 1.02 }}
                 >
                   <ExperienceCard>
                     <Box

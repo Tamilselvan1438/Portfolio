@@ -23,6 +23,7 @@ import {
   Grid,
   IconButton,
   Paper,
+  Tooltip,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -48,9 +49,14 @@ const Home = () => {
     {
       icon: <LinkedIn />,
       url: "https://www.linkedin.com/in/tamil-selvan-p-b08849354/",
+      tooltip: "Connect on LinkedIn",
     },
-    { icon: <GitHub />, url: "https://github.com/Tamilselvan1438" },
-    { icon: <Twitter />, url: "https://x.com/TamilSelvan1438" },
+    {
+      icon: <GitHub />,
+      url: "https://github.com/Tamilselvan1438",
+      tooltip: "Check my GitHub",
+    },
+    { icon: <Twitter />, url: "https://x.com/TamilSelvan1438", tooltip: "Connect on Twitter" },
     // { icon: <Email />, url: "mailto:your.email@example.com" },
   ];
 
@@ -186,20 +192,22 @@ const Home = () => {
 
                 <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
                   {socialLinks.map((item, index) => (
-                    <IconButton
-                      key={index}
-                      target="_blank"
-                      href={item.url}
-                      sx={{
-                        color: "text.primary",
-                        backgroundColor: "background.paper",
-                        "&:hover": {
-                          color: theme.palette.primary.main,
-                        },
-                      }}
-                    >
-                      {item.icon}
-                    </IconButton>
+                    <Tooltip title={item.tooltip} arrow key={index}>
+                      <IconButton
+                        key={index}
+                        target="_blank"
+                        href={item.url}
+                        sx={{
+                          color: "text.primary",
+                          backgroundColor: "background.paper",
+                          "&:hover": {
+                            color: theme.palette.primary.main,
+                          },
+                        }}
+                      >
+                        {item.icon}
+                      </IconButton>
+                    </Tooltip>
                   ))}
                 </Box>
               </Box>
@@ -222,7 +230,7 @@ const Home = () => {
               >
                 <Avatar
                   alt="Tamil Selvan - Frontend Developer"
-                  src="../image/myphoto.jpg"
+                  src="../image/tamil.JPG"
                   sx={{
                     width: "100%",
                     height: "100%",

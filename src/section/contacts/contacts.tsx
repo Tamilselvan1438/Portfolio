@@ -528,7 +528,7 @@ const Contact = () => {
               {/* Avatar with Gradient Border */}
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Avatar
-                  src="../image/myphoto.jpg"
+                  src="../image/tamil.JPG"
                   sx={{
                     width: 120,
                     height: 120,
