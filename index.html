@@ -631,9 +631,11 @@
           status.textContent='✓ Message sent! I’ll get back to you soon.';
           form.reset();
         })
-        .catch(function(){
+        .catch(function(err){
           status.className='cf-status err';
-          status.textContent='✗ Couldn’t send. Please email me directly below.';
+          var detail = err && (err.text || err.status) ? (' ['+(err.status||'')+' '+(err.text||'')+']') : '';
+          status.textContent='✗ Send failed'+detail+' — or email me below.';
+          try{ console.error('EmailJS error:', err); }catch(e){}
         })
         .finally(function(){ btn.disabled=false; btn.textContent=orig; });
     });
